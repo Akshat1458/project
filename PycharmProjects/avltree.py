@@ -108,7 +108,7 @@ class AVL(object):
 
         if not node:
             return True
-        if (data[1]<=node.data[1]+node.data[3] and data[1]>=node.data[1]) or (data[1]<=node.data[1] and data[1]>=node.data[1]-node.data[2]):
+        if (data[1]+data[3]>=node.data[1]-node.data[2] and data[1]-data[2]<=node.data[1]+node.data[3]):
             return False
         if data[1]<node.data[1]:
             return self.search(node.left,data)
